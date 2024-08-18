@@ -1,0 +1,81 @@
+ /* 会改变所有元素的special类，为什么显示不出来图片啊！！！ */
+.special {
+    background: red url(_media/purple_monster.png) 10px 10px repeat-x fixed;
+    /* background-color: red;
+    background-image: url(bg-graphic.png);
+    background-position: 10px 10px;
+    background-repeat: repeat-x;
+    background-attachment: fixed; */
+    padding: 10px 15px 15px 5px; /* 上、右、下、左 */
+    color: orange;
+    font-weight: bold;
+  }
+ 
+ /* 会改变li元素的special2类 */
+  li.special2 {
+    color: red;
+    font-weight: bold;
+  }
+  
+   /* 会改变包含在li元素下的em元素的格式 */
+  li em {
+    color: rebeccapurple;
+  }
+
+  /* 会改变紧跟在h1元素后的p元素的格式 */
+  h1 + p {
+    font-size: 200%;
+  }
+
+  /* 没有被访问的链接颜色变为粉色、访问过的链接变为绿色 */
+  a:link {
+    color: pink;
+  }
+  
+  a:visited {
+    color: green;
+  }
+  
+  /* 链接被鼠标悬停时候的样式——移除下划线 */
+  a:hover {
+    text-decoration: none;
+  }
+
+  /* 以上的组合使用，在 <body> 之内，紧接在 <h1> 后面的 <p> 元素的内部，类名为 special */
+  body h1 + p .special {
+  color: yellow;
+  background-color: black;
+  padding: 5px;
+}
+
+/* 产生冲突时，后出现的规则占优势，为层叠规则；类选择器比元素选择器优先级更高 */
+
+/* calc() 函数可以做简单的计算 */
+.calculate_box {
+    padding: 10px;
+    width: calc(90% - 30px);
+    background-color: rebeccapurple;
+    color: white;
+  }
+
+  /* 允许你旋转、缩放、倾斜或平移给定元素 */
+  .transform_box {
+    margin: 30px;
+    width: 100px;
+    height: 100px;
+    background-color: rebeccapurple;
+    transform: rotate(0.8turn) translate(120px, 50%);
+  }
+
+  /* 响应式设计：媒体查询，根据各种设备特征和参数是否存在以及对应的值来应用 CSS 样式 */
+  body {
+    background-color: pink;
+  }
+  
+  /* 如果浏览器的视口宽于 30em，使用蓝色背景 */
+  @media (min-width: 30em) {
+    body {
+      background-color: white;
+    }
+  }
+
